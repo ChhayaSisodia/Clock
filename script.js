@@ -1,3 +1,4 @@
+// Clock Logic 
 setInterval(() => {
     date = new Date();
     hours = date.getHours();
@@ -10,6 +11,10 @@ setInterval(() => {
     hourHand.style.transform = `rotate(${hourrotation}deg)`;
     minHand.style.transform = `rotate(${minrotation}deg)`;
     secHand.style.transform = `rotate(${secrotation}deg)`;
+
+    if(minutes < 10) {
+        minutes = '0' + minutes;
+    }
 
     // For Time in number
     document.getElementById("time-in-number").innerHTML = `${hours} : ${minutes} : ${seconds}`;
